@@ -27,7 +27,7 @@ resource "aws_security_group" "jenkins_sg" {
 resource "aws_instance" "jenkins_ec2" {
   ami                    = "ami-0e001c9271cf7f3b9"
   instance_type          = "t2.micro"
-  key_name               = "your-key-name"
+  key_name               = "jenkins1198"
   vpc_security_group_ids = [aws_security_group.jenkins_sg.id]
   user_data              = file("${path.module}/user_data.sh")
   tags = {

@@ -1,6 +1,8 @@
 #!/bin/bash
-apt update -y
-apt install -y docker.io git curl
+sudo apt-get update -y
+sudo apt install -y docker.io git curl
+sudo usermod -aG docker ubuntu
+newgrp docker
 systemctl start docker
 systemctl enable docker
 mkdir -p /opt/jenkins_home
